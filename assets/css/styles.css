@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+}
+/* Common  */
+.main-content {
+    width: 1170px;
+    /* chiều rộng tối đa của trình duyệt trên mọi thiết bị sẽ 
+    được tính theo công thức max-width tức là
+    khi trình duyệt thu nhỏ lại thì chiều rộng tối đa sẽ trừ đi hai bên 24px
+    vì class main-content đã được căn ra giữa trang, giữ trình duyệt bằng 
+    thuộc tính margin-left và margin-right */
+    max-width: calc(100% - 48px);
+    margin-left: auto;
+    margin-right: auto;
+}
+a {
+    text-decoration: none;
+}
+
+.btn {
+    /* đặt display: inline-block để set width height  */
+    display: inline-block;
+    min-width: 118px;
+    padding: 0 16px;
+    /* chiều cao của nút  */
+    line-height: 5rem;
+    color: #fff;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 24.5px;
+    background: #171100;
+}
+
+/* ===============header=================  */
+.header {
+    /* background-color: #fffcf4; */
+    /* background-color: orange; */
+}
+
+.header.fixed {
+    position: sticky;
+    top: -28px;
+}
+
+.header .body {
+    display: flex;
+    background: #fffcf4;
+    /* căn giữa nội dung bên trong của cả ba thẻ 
+    tìm thẻ nào bọc cả ba thẻ và có thuộc tính df
+    thêm align-item căn theo chiều ngang của container */
+    align-items: center;
+    padding: 36px 0 8px;
+}
+.nav {
+    margin-left: auto;
+}
+.nav ul {
+    display: flex;
+}
+.nav ul a {
+    /* thẻ a là thẻ inline nên padding top và bottom không thay đổi
+    nhưng vẫn tăng cùng bấm  */
+    position: relative;
+    padding: 8px 21px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #5f5b53;
+}
+
+.nav a:hover,
+.nav li.active a {
+    /* font-weight: 600; */
+
+    text-shadow: 1px 0 0 currentColor;
+    color: #171100;
+}
+
+.nav li.active a::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 21px;
+    bottom: 6px;
+    width: 12px;
+    height: 2px;
+    border-radius: 1px;
+    background: #171100;
+}
+
+.header .sign-up-btn {
+    min-width: 144px;
+}
+
+.header .action {
+    margin-left: calc(70px - 21px);
+}
