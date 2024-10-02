@@ -1,7 +1,10 @@
 * {
     box-sizing: border-box;
 }
-
+:root {
+    --font-heading: "Sen", sans-serif;
+    --primary-color: #ffb900;
+}
 html {
     font-size: 62.5%;
 }
@@ -36,29 +39,47 @@ a {
     text-align: center;
     font-size: 1.6rem;
     font-weight: 600;
-    border-radius: 24.5px;
+    border-radius: 999px;
     background: #171100;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.heading {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #171100;
+}
+
+.desc {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.66;
+    color: #5f5b53;
 }
 
 /* ===============header=================  */
 .header {
-    /* background-color: #fffcf4; */
-    /* background-color: orange; */
+    background-color: #fffcf4;
 }
 
 .header.fixed {
     position: sticky;
     top: -28px;
+    z-index: 1;
 }
 
 .header .body {
     display: flex;
-    background: #fffcf4;
     /* căn giữa nội dung bên trong của cả ba thẻ 
     tìm thẻ nào bọc cả ba thẻ và có thuộc tính df
     thêm align-item căn theo chiều ngang của container */
     align-items: center;
     padding: 36px 0 8px;
+    background: #fffcf4;
 }
 .nav {
     margin-left: auto;
@@ -102,4 +123,347 @@ a {
 
 .header .action {
     margin-left: calc(70px - 21px);
+}
+/* hero  */
+.hero {
+    /* khoang cach den phan header  
+    vì phần header có khoảng đệm bottom là 8px
+    nên lấy chiều cao trong thiết kế trừ 8px*/
+    padding: calc(64px - 8px) 0 65px;
+    background: #fffcf4;
+    /* background-color: orange; */
+}
+.hero .body {
+    display: flex;
+}
+
+.hero .media-block {
+    position: relative;
+    width: 48%;
+}
+
+.media-block .img {
+    display: block;
+    width: 470px;
+    height: 685px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.media-block .hero-summary {
+    position: absolute;
+    right: 0;
+    bottom: 48px;
+    width: 270px;
+    padding: 24px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+}
+.hero-summary .item {
+    display: flex;
+    align-items: center;
+    /* cach 1  */
+    /* margin-top: 14px; */
+}
+/* cach 1  */
+/* .hero-summary .item:first-child {
+    margin-top: 0;
+} */
+
+/* cach 2  */
+.hero-summary .item + .item {
+    margin-top: 14px;
+}
+
+.hero-summary .icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff9e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-summary .item:nth-of-type(2) .icon {
+    background: #fcefff;
+}
+
+.hero-summary .item:last-of-type .icon {
+    background: #ebeaff;
+}
+
+.hero-summary .info {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero-summary .info .label {
+    color: #5f5b53;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.86;
+}
+
+.hero-summary .info .title {
+    color: #171100;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.hero .content-block {
+    width: 52%;
+    padding: calc(214px - 150px) 0 0 130px;
+}
+/* muốn chọn hai class trong cung một thẻ phải viết liên vào nhau  */
+.heading.lv1 {
+    letter-spacing: -0.116rem;
+    line-height: 1.17;
+    font-size: 5.8rem;
+}
+
+.content-block .desc {
+    margin-top: 22px;
+}
+
+.content-block .cta-group {
+    margin: 38px 0 48px;
+    display: flex;
+    align-items: center;
+}
+.cta-group .hero-cta {
+    min-width: 180px;
+    /* tại sao không sử dụng height  */
+    /* height: 64px; */
+    /* vì btn được thiết lập chung bên trên
+        dùng thuộc tính line-height để tạo chiều cao cho nút
+        vậy nên ở đây cũng phải dùng line-height */
+    line-height: 6.4rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-radius: 32px;
+    color: #fff;
+    background: var(--primary-color);
+}
+
+.cta-group .watch-video {
+    margin-left: 28px;
+    align-items: center;
+    border: none;
+    display: flex;
+    background: transparent;
+    /* không nhất thiết phải viết ra hover
+        cần thay đổi style hay chữ thì mới cần viết ra hover
+    cursor có thể viết trực tiếp */
+    cursor: pointer;
+}
+
+.watch-video .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.07);
+}
+
+.watch-video span {
+    display: inline-block;
+    margin-left: 14px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #171100;
+}
+.content-block .stats {
+    margin-top: 8px;
+}
+
+.content-block .stats strong {
+    padding: 0 8px 0 28px;
+    font-family: var(--font-heading);
+    font-size: 4.4rem;
+    font-weight: 700;
+    color: #171100;
+}
+
+.content-block .stats strong:first-child {
+    padding-left: 0;
+}
+
+/* Popular  */
+/* popular top  */
+.popular {
+    margin-top: 200px;
+}
+
+.popular .popular-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading.lv2 {
+    font-size: 3.8rem;
+    line-height: 1.26;
+    letter-spacing: -0.076rem;
+}
+
+.popular .desc {
+    margin-top: 16px;
+    max-width: 458px;
+}
+
+.popular .controls {
+    display: flex;
+}
+
+.control-btn + .control-btn {
+    margin-left: 18px;
+}
+
+.popular .control-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+
+    color: var(--primary-color);
+    background: transparent;
+}
+
+.popular .control-btn:hover {
+    color: #fff;
+    background: var(--primary-color);
+}
+
+/* 
+----------Cach 1-------------
+.popular .course-list {
+    display: flex;
+    margin-top: 55px;
+    margin-left: -30px;
+
+    border-radius: 12px 12px 0px 0px;
+}
+
+.popular .course-item {
+    margin-left: 30px;
+    border: 1px solid #e2dfda;
+
+} */
+
+/* ---------------cach 2  */
+.popular .course-list {
+    margin-top: 55px;
+    display: flex;
+    gap: 30px;
+}
+
+.popular .course-item {
+    flex: 1;
+    border: 1px solid #e2dfda;
+    border-radius: 12px;
+} /* cach 2 ----------- */
+
+.popular .course-item:hover {
+    /* border: none; sẽ làm phần tử khác ảnh hưởng thao vì bỏder ăn vào kích thước phần tử 
+    bỏ đi làm mất đi kich thước đó nên ở đây có hai cách giải quyết
+        + đổi màu border trùng nền:  border: 1px solid #fff;
+        + để màu của border là trong suốt: border-color: transparent;
+    hai cách trên là border vẫn ở đó nhưng kích thước không thay đổi */
+    border-color: transparent;
+    background: #fff;
+    box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
+    /* vậy nên khi hover kích thước thay đổi thì những phần tử khác sẽ bị ảnh hưởng theo  */
+}
+
+.course-list .thum {
+    /* cach1
+    width: 370px; */
+    height: 278px;
+    object-fit: cover;
+    border-radius: 12px 12px 0px 0px;
+    /* trong thiết kế ảnh màn trên border nên giải quyết như sau  */
+    margin: -1px;
+    width: calc(100% + 2px);
+    /* vì margin cả 4 hướng nên trái phải mỗi bên 1px nên cộng 2px kích thước ảnh  */
+}
+
+.course-list .info {
+    margin: 16px 22px 22px;
+}
+
+.course-list .info .head,
+.info .head .rating,
+.info .foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info .head .title a {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.66;
+    color: #171100;
+}
+
+.info .head .rating .star {
+    color: var(--primary-color);
+}
+
+.info .head .rating .value {
+    align-self: center;
+    margin-left: 6px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.75;
+    color: var(--primary-color);
+}
+
+.info .desc.lv3 {
+    margin-top: 6px;
+    width: 326px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.85;
+}
+
+.info .foot {
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between; */
+    margin-top: 12px;
+    /* vì cụm display: fl... bên trên giống với
+    phần 
+    .course-list .info .head,
+    .info .head .rating
+    ở bên trên nên viết gộp chung lại nhé */
+}
+
+.info .foot .price {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.66;
+    color: #171100;
+}
+
+.info .foot .btn.btn-popular {
+    /* thì nếu đã đặt phần chung ở bên trên nếu mà không nhớ, không muốn lên code trên tìm mỏi mắt thì
+    lên trình duyệt inspect ra coi lại những gì đã đặt chung, và viết thêm những thuộc tính riêng lẻ, cần được thay đổi vào nhé */
+    font-size: 1.4rem;
+    /* tại sao không đặt height trong trường hợp này vì chung ta đã căn giữa phần tử bằng lint-height rồi nhé */
+    border: none;
+}
+.info .foot .btn.btn-popular:hover {
+    background: var(--primary-color);
+    border: none;
 }
