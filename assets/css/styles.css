@@ -807,3 +807,81 @@ a {
     background: var(--primary-color);
     cursor: default;
 }
+
+/* footer  */
+.footer {
+    padding-top: 96px;
+    background-color: #2e2100;
+}
+
+.footer .row {
+    display: flex;
+    padding-bottom: 38px;
+    border-bottom: 1px solid #59554b;
+}
+
+.footer .row .column {
+    width: 21.6%;
+}
+
+.footer .row .column:first-child {
+    width: 35%;
+}
+
+.footer .desc {
+    margin: 18px 0;
+    max-width: 267px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.85;
+    color: #bfbcb2;
+}
+
+.footer .socials a {
+    margin-right: 18px;
+}
+
+.footer .socials a:last-child img {
+    margin-right: 0;
+}
+
+.footer .title {
+    padding-bottom: 14px;
+    padding-right: 48px;
+    border-bottom: 1px solid #59554b;
+    /* phần border-bottom dài ra vì thẻ h3 là thẻ blog sử thành inline-block là được  */
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.75;
+    color: #fff;
+}
+
+.footer .row .column .list {
+    margin-top: calc(28px - 12px);
+}
+
+.footer .row .column .list a {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.85;
+    color: #bfbcb2;
+}
+
+.footer .row .column .list a strong {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.85;
+    color: #fff;
+}
+
+.footer .copyright {
+    padding: 28px 0;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.86;
+    color: #807d74;
+}
