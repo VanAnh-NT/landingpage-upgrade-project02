@@ -612,3 +612,19 @@ a {
     background: var(--primary-color);
     border: none;
 }
+
+/* feature-2  vi*/
+.feature-2 .body {
+    flex-direction: row-reverse;
+}
+
+.feature-2 .content {
+    width: 49%;
+}
+.feature-2 .image {
+    width: 41%;
+}
+.feature-2 .image img {
+    width: 470px;
+    height: 440px;
+}
