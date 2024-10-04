@@ -665,12 +665,27 @@ a {
     display: flex;
     /* flex: 1; */
     gap: 0 30px;
+    /* ẩn những phần tử con bị chọc ra khỏi chiều rộng của 
+    blog-list vì đây đang là thẻ cha của item phía dưới */
+    overflow: hidden;
 }
 
 .blog .blog-list .item {
-    width: 33.33%;
+    /* phần item khi bỏ flex-shirink mặc định thay vào đó là 0
+    thì kích thước width của nó sẽ được giữ nguyên bởi vì nó không được co lại (shrink) nữa
+    vậy cho nên phải tính lại width
+    để nằm trọn vào phần tử cha 100% thì 3 lần 33.33% cũng gần bằng 100%
+    nhưng ở đây được thêm thuộc tính gap ở thẻ cha (blog-list) nữa nên 
+    chiều rộng khi không được co lại còn cộng thêm gap nữa sẽ vượt quá 100%
+    vậy nên hay tính lại width ở đây như sau:
+    để 3 item nằm trong thẻ cha của nó thì tổng gap giữ 3 phần tử là 30+30=60px
+    ta lấy 60 chia 3 để xem giữ 3 phần tử ấy cần bao nhiêu thì bằng 20px
+    giờ chỉ cần lấy width giảm 20px là được */
+    width: calc(33.33% - 20px);
     border-radius: 16px;
     background: #fff;
+    /* để cho item không bị co lại khi các item bị nhét vào một flex */
+    flex-shrink: 0;
 }
 
 .blog .blog-list .item:hover {
@@ -771,4 +786,24 @@ a {
 
 .blog .blog-list .item .body .btn:hover {
     background: var(--primary-color);
+}
+
+.blog .dots {
+    display: flex;
+    justify-content: center;
+    gap: 0 6px;
+    margin-top: 38px;
+}
+
+.blog .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5f5b53;
+    cursor: pointer;
+}
+
+.blog .dot.active {
+    background: var(--primary-color);
+    cursor: default;
 }
